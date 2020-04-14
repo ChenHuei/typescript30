@@ -36,3 +36,14 @@ const add1: AddOperation1 = {
 //         return p1 + p2
 //     }
 // }
+
+interface MyDocument {
+    createElement(tag: 'p'):      HTMLParagraphElement,
+    createElement(tag: 'body'):   HTMLBodyElement,
+    createElement(tag: 'div'):    HTMLDivElement
+}
+interface MyDocument {
+    createElement(tag: 'a'):      HTMLAnchorElement,
+    createElement(tag: 'span'):   HTMLSpanElement,
+    createElement(tag: 'input'):  HTMLInputElement
+}
