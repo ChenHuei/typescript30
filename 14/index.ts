@@ -1,5 +1,9 @@
+/*
+    1. 介面屬性對應的函式可以被超載
+    2. 被超載的函式名稱必須相同
 
-// 介面屬性對應的函式可以被超載
+    => 若某物件實踐該介面時，必須符合該介面裡任一超載過的函式之情形。
+*/
 
 interface AddOperation {
     addition(p1: number, p2: number): number;
@@ -13,7 +17,7 @@ const implementAddition: AddOperation = {
         } else if (typeof p1 === 'string' && typeof p2 === 'string') {
             return parseInt(p1) + parseInt(p2)
         }
-        throw new Error('failed')
+        throw new Error('error')
     }
 }
 
@@ -36,6 +40,8 @@ const add1: AddOperation1 = {
 //         return p1 + p2
 //     }
 // }
+
+// Declaration Merging
 
 interface MyDocument {
     createElement(tag: 'p'):      HTMLParagraphElement,
