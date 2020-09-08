@@ -3,17 +3,17 @@
 // 定義 Dictionary 物件型別內的 key 和 value 都須為 string
 
 type Dictionary = {
-    [propName: string]: number
+    [propName: string]: string
 }
 
 const obj1: Dictionary = {
-    aaa: 0,
-    bbb: 1,
+    aaa: 'aaa',
+    bbb: 'bbb',
 }
 
 // error
 // const obj2: Dictionary = {
-//     111: '1',
+//     111: 111,
 //     log: () => { console.log('log') }
 // }
 
@@ -32,7 +32,7 @@ const obj4: StringType = {}
 const obj5: StringType = ['hi']
 
 // error
-// const obj4: StringType = [1,2,3]
+// const obj6: StringType = [1]
 
 // 複合狀態
 
@@ -74,7 +74,6 @@ type Car = {
 const toyota: Car = {
     type: 'plus',
     name: 'RV'
-
 }
 
 // error

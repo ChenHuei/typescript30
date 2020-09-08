@@ -2,8 +2,8 @@
 // Indexable Types
 var _a;
 var obj1 = {
-    aaa: 0,
-    bbb: 1,
+    aaa: 'aaa',
+    bbb: 'bbb',
 };
 var obj3 = (_a = {
         12: 'hi'
