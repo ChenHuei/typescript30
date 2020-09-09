@@ -101,16 +101,16 @@ class CashMachine implements interfaceCashMachine {
             throw new Error('Not signed in!!')
         }
     }
-}
 
-function printUser(user: UserAccount | undefined) {
-    if (user) {
-        console.log(`
-            current user: ${user.account}
-            money: ${user.money}
-        `)
-    } else {
-        console.log('no user found');
+    printUser() {
+        if (this.currentUser) {
+            console.log(`
+                current user: ${this.currentUser.account}
+                money: ${this.currentUser.money}
+            `)
+        } else {
+            console.log('no user found');
+        }
     }
 }
 
@@ -122,13 +122,16 @@ const machine = new CashMachine(
     ]
 )
 
-// printUser(machine.currentUser)
+machine.printUser()
 
 machine.signIn('aaa', 'aaa')
+machine.printUser()
 // printUser(machine.currentUser)
 
 machine.withdraw(5000)
+machine.printUser()
 // printUser(machine.currentUser)
 
 machine.signOut()
+machine.printUser()
 // printUser(machine.currentUser)

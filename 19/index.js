@@ -35,25 +35,28 @@ var CashMachine = /** @class */ (function () {
             throw new Error('Not signed in!!');
         }
     };
+    CashMachine.prototype.printUser = function () {
+        if (this.currentUser) {
+            console.log("\n                current user: " + this.currentUser.account + "\n                money: " + this.currentUser.money + "\n            ");
+        }
+        else {
+            console.log('no user found');
+        }
+    };
     return CashMachine;
 }());
-function printUser(user) {
-    if (user) {
-        console.log("\n            current user: " + user.account + "\n            money: " + user.money + "\n        ");
-    }
-    else {
-        console.log('no user found');
-    }
-}
 var machine = new CashMachine([
     { account: 'aaa', password: 'aaa', money: 10000 },
     { account: 'bbb', password: 'bbb', money: 10000 },
     { account: 'ccc', password: 'ccc', money: 10000 }
 ]);
-// printUser(machine.currentUser)
+machine.printUser();
 machine.signIn('aaa', 'aaa');
+machine.printUser();
 // printUser(machine.currentUser)
 machine.withdraw(5000);
+machine.printUser();
 // printUser(machine.currentUser)
 machine.signOut();
+machine.printUser();
 // printUser(machine.currentUser)
