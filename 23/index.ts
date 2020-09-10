@@ -24,12 +24,11 @@ class C {
 1. 子類別可擴充該個體的功能
 2. 多個子類別的單例物件可在程式中切換
 
-
 更進一步，由於在程式中可能不需要一開使就使用到 singleton 產生的唯一個體，為避免造成額外資訊消耗而出現 
 
 Lazy Initialization in Singleton Pattern
 
-- 第一次呼叫 SingletonClass.getInstance 靜態方法時，再建立就可以了
+第一次呼叫 SingletonClass.getInstance 靜態方法時，再建立就可以了
 
 */
 
