@@ -1,10 +1,10 @@
-// Strategy Pattern 策略模式
+// Strategy Pattern 策略模式 I
 
 /*
 
 根據不同情形，在程式執行時可以靈活地轉換演算法（策略）而不需要再另訂新的類別與類別繼承的動作
 
-1. 策略的介面綁並與宣告
+1. 策略的介面綁定與宣告
 
 abilities/Attack.ts
 (每一個策略必須綁定某介面以確保實踐出來的功能是相同的，內部演算法可以不同)
@@ -25,7 +25,7 @@ characters.ts
 4. 子類別選擇策略
 
 profession/Swordsman & profession/Warlock
-(constructor 進行策略的選擇)
+(constructor 進行策略的選擇：選擇攻擊模式)
 
 */
 
