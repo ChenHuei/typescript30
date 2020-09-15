@@ -39,7 +39,15 @@ namespace A {
     export function print(...) {...}
 }
 
+equal to
 
+namespace A {
+    export const name = 'A'
+    export function print(...) {...}
+}
+
+另外，不同區塊的 Namespace 可以交互使用各自輸出的功能
+但是，不同區塊的 Namespace 不能覆蓋之前宣告的 Namespace 所提供的功能 (變數、函式、類別...)
 
 */
 var MyMath;
@@ -63,6 +71,10 @@ var A;
 })(A || (A = {}));
 (function (A) {
     A.type = 'A';
+    function print() {
+        console.log(A.name);
+    }
+    A.print = print;
 })(A || (A = {}));
-console.log(A.name);
-console.log(A.type);
+console.log(A);
+A.print();

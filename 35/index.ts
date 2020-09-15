@@ -46,6 +46,9 @@ namespace A {
     export function print(...) {...}
 }
 
+另外，不同區塊的 Namespace 可以交互使用各自輸出的功能
+但是，不同區塊的 Namespace 不能覆蓋之前宣告的 Namespace 所提供的功能 (變數、函式、類別...)
+
 */
 
 
@@ -67,11 +70,20 @@ console.log(MyMath.AreaOfRectangle(50, 50))
 
 namespace A {
     export const name = 'A'
+    export interface I {
+        createElement(name: 'a'): HTMLAnchorElement
+    }
 }
 
 namespace A {
     export const type = 'A'
+    export function print(): void {
+        console.log(name)
+    }
+    export interface I {
+        createElement(name: 'p'): HTMLParagraphElement
+    }
 }
 
-console.log(A.name)
-console.log(A.type)
+console.log(A)
+A.print()
