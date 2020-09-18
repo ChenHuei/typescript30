@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.map-wrapper {
+    position: relative;
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.input-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 16px;
+    border: 2px;
+    z-index: 1000;
+}
+
+label[for="select-district"] {
+    margin-right: 8px;
+    color: white;
+    vertical-align: middle;
+}

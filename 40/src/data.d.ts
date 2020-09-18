@@ -4,7 +4,7 @@ import { LatLngExpression } from 'leaflet';
 declare type Districts = '中正區' | '大同區' | '中山區' | '松山區' | '大安區' | '萬華區' | '信義區' | '士林區' | '北投區' | '內湖區' | '南港區' | '文山區';
 
 // open data 架構
-declare type SourceYouBikeInfo = {
+declare type SourceUBikeInfo = {
   sno: string         // 站點代號
   sna: string         // 站點名稱
   tot: string         // 站點總停車格
@@ -22,7 +22,7 @@ declare type SourceYouBikeInfo = {
 }
 
 // 希望架構
-declare type YouBikeInfo = {
+declare type UBikeInfo = {
   availableBikes: number      // 目前數量 - sbi
   totalBikers: number         // 所有數量 - tot
   latLng: LatLngExpression    // 經緯度
