@@ -13,7 +13,7 @@ export default function fetchBikeDate(url = API_URL) {
             return {
                 availableBikes: parseInt(sbi),
                 totalBikes: parseInt(tot),
-                latLng: <LatLngExpression>[parseInt(lat), parseInt(lng)],
+                latLng: <LatLngExpression>[parseFloat(lat), parseFloat(lng)],
                 regionName: sarea,
                 stopName: sna
             } as unknown as UBikeInfo
