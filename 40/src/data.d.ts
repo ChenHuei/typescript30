@@ -21,7 +21,7 @@ declare type SourceUBikeInfo = {
   acr: string         // 全站禁用狀態
 }
 
-// 希望架構
+// 實際(希望處理)架構
 declare type UBikeInfo = {
   availableBikes: number      // 目前數量 - sbi
   totalBikers: number         // 所有數量 - tot

@@ -1,7 +1,19 @@
 import { LatLngExpression } from 'leaflet';
 
 // 所有行政區
-declare type Districts = '中正區' | '大同區' | '中山區' | '松山區' | '大安區' | '萬華區' | '信義區' | '士林區' | '北投區' | '內湖區' | '南港區' | '文山區';
+declare type Districts = 
+  '中正區' | 
+  '大同區' | 
+  '中山區' | 
+  '松山區' | 
+  '大安區' | 
+  '萬華區' | 
+  '信義區' | 
+  '士林區' | 
+  '北投區' | 
+  '內湖區' | 
+  '南港區' | 
+  '文山區';
 
 // open data 架構
 declare type SourceUBikeInfo = {
@@ -21,7 +33,7 @@ declare type SourceUBikeInfo = {
   acr: string         // 全站禁用狀態
 }
 
-// 希望架構
+// 實際(希望處理)架構
 declare type UBikeInfo = {
   availableBikes: number      // 目前數量 - sbi
   totalBikers: number         // 所有數量 - tot
