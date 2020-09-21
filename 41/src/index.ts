@@ -22,6 +22,7 @@ const mapFaced = new UBikeMapFaced(
 
 let currentDistrict = $selectDistrict?.value as Districts
 
+// 建立所有行政區的 option
 districts.forEach(item => {
     const $optionTag = document.createElement('option')
     
@@ -31,6 +32,7 @@ districts.forEach(item => {
     $selectDistrict?.appendChild($optionTag)
 })
 
+// 註冊 select change event
 $selectDistrict?.addEventListener('change', event => {
     const { value } = event.target as HTMLSelectElement
     currentDistrict = value as unknown as Districts
