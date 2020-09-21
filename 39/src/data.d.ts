@@ -36,7 +36,7 @@ declare type SourceUBikeInfo = {
 // 實際(希望處理)架構
 declare type UBikeInfo = {
   availableBikes: number      // 目前數量 - sbi
-  totalBikers: number         // 所有數量 - tot
+  totalBikes: number          // 所有數量 - tot
   latLng: LatLngExpression    // 經緯度
   regionName: Districts       // 站點區域 - sarea
   stopName: string            // 站點名稱 - sna

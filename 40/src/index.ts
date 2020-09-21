@@ -5,7 +5,6 @@ import L, { LayerGroup } from 'leaflet'
 import mapConfig from './main.config'
 import fetchData from './fetchData'
 
-
 const { coordinate, zoomLevel, tileLayerURL, containerID } = mapConfig
 
 const map = L.map(containerID)
@@ -14,6 +13,7 @@ const $selectDistrict = <HTMLSelectElement | null>(document.querySelector('#sele
 let markerLayer: LayerGroup
 let currentDistrict = $selectDistrict?.value as Districts
 
+// 建立所有行政區的 option
 districts.forEach(item => {
     const $optionTag = document.createElement('option')
     
@@ -23,35 +23,36 @@ districts.forEach(item => {
     $selectDistrict?.appendChild($optionTag)
 })
 
+// 註冊 select change event
 $selectDistrict?.addEventListener('change', event => {
     const { value } = event.target as HTMLSelectElement
     currentDistrict = value as unknown as Districts
 
     markerLayer.remove()
 
-    updateYouBikeMap(currentDistrict)
+    updateUBikeMap(currentDistrict)
 })
 
-
+// init
 map.setView(coordinate, zoomLevel)
 
 L.tileLayer(tileLayerURL).addTo(map)
 
-updateYouBikeMap(currentDistrict)
+updateUBikeMap(currentDistrict)
 
-function updateYouBikeMap(district: Districts): void {
+function updateUBikeMap(district: Districts): void {
     fetchData().then(res => {
         
         const data = res.filter(item => item.regionName === district)
     
         const markerList = data.map(element => {
-            const { latLng,regionName, stopName, totalBikers, availableBikes} = element
+            const { latLng,regionName, stopName, totalBikes, availableBikes} = element
     
             const marker = new L.Marker(latLng)
     
             marker.bindTooltip(`
                 <p>${regionName} - ${stopName}</p>
-                <p>總數：${totalBikers}</p>
+                <p>總數：${totalBikes}</p>
                 <p>可用：${availableBikes}</p>
             `)
     

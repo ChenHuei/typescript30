@@ -14,7 +14,7 @@ const mapFaced = new UBikeMapFaced(
     function(info: UBikeInfo) {
         return `
             <p>${info.regionName} - ${info.stopName}</p>
-            <p>總數: ${info.totalBikers}</p>
+            <p>總數: ${info.totalBikes}</p>
             <p>可用: ${info.availableBikes}</p>
         `
     }
