@@ -41,9 +41,9 @@ class MyGenericLinkedList<T> implements LinkedList<T> {
         const length = this.length()
         const newListNode = new MyGenericLinkedListNode(value)
 
-        if (length < index) {
+        if (index > length) {
             throw new Error('Index out of bound')
-        } else if (length === index) {
+        } else if (index === length) {
             if (index === 0) {
                 this.head = newListNode
             } else {
@@ -69,8 +69,6 @@ class MyGenericLinkedList<T> implements LinkedList<T> {
     }
 
     public length() {
-        if (this.head === null) return 0
-
         let count = 0
         let currentNode: LinkedListNode<T> | null = this.head
 
@@ -92,3 +90,31 @@ class MyGenericLinkedList<T> implements LinkedList<T> {
         }
     }
 }
+
+const L = new MyGenericLinkedList<number>()
+
+L.insert(0 ,1)
+L.insert(1 ,3)
+L.insert(2 ,4)
+L.insert(1 ,2)
+
+L.getInfo()
+
+// unknown
+const N = new MyGenericLinkedList()
+
+N.insert(0 , '1')
+N.insert(1 , '3')
+N.insert(2 , '4')
+N.insert(1 , '2')
+
+N.getInfo()
+
+const M = new MyGenericLinkedList<boolean>()
+
+M.insert(0 , true)
+M.insert(1 , true)
+M.insert(2 , false)
+M.insert(1 , false)
+
+M.getInfo()
