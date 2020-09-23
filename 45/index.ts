@@ -1,5 +1,15 @@
 // 泛型宣告下 class 與 interface 綁定時的規則與特點
 
+/*
+
+類別綁定泛用介面，分為兩種情況
+
+1. 普通類別：實踐的泛用介面必須給予型別參數確切型別
+
+2. 泛型類別：除了給予確認型別，也可填入用泛用類別所宣告的型別參數
+
+*/
+
 interface LinkedListNode<T> {
     value: T,
     next: LinkedListNode<T> | null
