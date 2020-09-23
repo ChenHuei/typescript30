@@ -1,5 +1,6 @@
 "use strict";
 // 泛型宣告下 class 與 interface 綁定時的規則與特點
+Object.defineProperty(exports, "__esModule", { value: true });
 var MyGenericLinkedListNode = /** @class */ (function () {
     function MyGenericLinkedListNode(value) {
         this.value = value;
@@ -81,9 +82,17 @@ L.insert(1, 3);
 L.insert(2, 4);
 L.insert(1, 2);
 L.getInfo();
+// unknown
+var N = new MyGenericLinkedList();
+N.insert(0, '1');
+N.insert(1, '3');
+N.insert(2, '4');
+N.insert(1, '2');
+N.getInfo();
 var M = new MyGenericLinkedList();
-M.insert(0, '1');
-M.insert(1, '3');
-M.insert(2, '4');
-M.insert(1, '2');
+M.insert(0, true);
+M.insert(1, true);
+M.insert(2, false);
+M.insert(1, false);
 M.getInfo();
+exports.default = MyGenericLinkedList;

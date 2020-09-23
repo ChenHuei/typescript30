@@ -128,3 +128,5 @@ M.insert(2 , false)
 M.insert(1 , false)
 
 M.getInfo()
+
+export default MyGenericLinkedList
